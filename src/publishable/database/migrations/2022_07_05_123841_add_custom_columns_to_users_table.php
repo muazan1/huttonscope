@@ -16,20 +16,20 @@ class AddCustomColumnsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->uuid('uuid')->unique();
 
-            $table->foreignId('hc_role_id')->default(2);
+            $table->foreignId('role_id')->default(2);
 
-            $table->string('hc_first_name')->after('hc_role_id');
+            $table->string('first_name')->after('role_id');
 
-            $table->string('hc_last_name')->after('hc_first_name');
+            $table->string('last_name')->after('first_name');
 
             $table
-                ->string('hc_two_factor_secret')
+                ->string('two_factor_secret')
                 ->after('password')
                 ->nullable();
 
             $table
-                ->string('hc_two_factor_recovery_codes')
-                ->after('hc_two_factor_secret')
+                ->string('two_factor_recovery_codes')
+                ->after('two_factor_secret')
                 ->nullable();
         });
     }

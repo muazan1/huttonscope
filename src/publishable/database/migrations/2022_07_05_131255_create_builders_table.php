@@ -18,29 +18,29 @@ class CreateBuildersTable extends Migration
 
             $table->uuid('uuid')->unique();
 
-            $table->string('hc_customer_name');
+            $table->string('customer_name');
 
-            $table->string('hc_slug')->index();
+            $table->string('slug')->index();
 
-            $table->string('hc_email')->unique();
+            $table->string('email')->unique();
 
-            $table->string('hc_street_1');
+            $table->string('street_1');
 
-            $table->string('hc_street_2')->nullable();
+            $table->string('street_2')->nullable();
 
-            $table->string('hc_city');
+            $table->string('city');
 
-            $table->string('hc_postcode');
+            $table->string('postcode');
 
-            $table->string('hc_telephone_number');
+            $table->string('telephone_number');
 
-            $table->string('hc_county')->nullable();
+            $table->string('county')->nullable();
 
-            $table->foreignId('hc_customer_type')->default(true);
+            $table->foreignId('customer_type')->default(true);
 
-            $table->foreignId('hc_contract_type')->default(1);
+            $table->foreignId('contract_type')->default(1);
 
-            $table->date('hc_contract_expiry_date')->nullable();
+            $table->date('contract_expiry_date')->nullable();
 
             $table->timestamps();
 
